@@ -12,7 +12,7 @@ public class Client {
             DataOutputStream dout = new DataOutputStream(s.getOutputStream());
             dout.writeUTF("Hello Server");
             dout.flush();
-            dout.close();
+
 
             DataInputStream din = new DataInputStream(s.getInputStream());
             String data;
@@ -23,6 +23,8 @@ public class Client {
                     break;
                 }
             }
+            dout.close();
+            din.close();
             s.close();
         } catch(Exception e) {
             System.out.println(e);

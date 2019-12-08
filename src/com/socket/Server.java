@@ -34,8 +34,9 @@ public class Server {
 
             dout.writeUTF("close");
             dout.flush();
-            dout.close();
 
+            dis.close();
+            dout.close();
             ss.close();
         } catch(Exception e) {
             System.out.println(e);
