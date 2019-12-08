@@ -13,6 +13,16 @@ public class Client {
             dout.writeUTF("Hello Server");
             dout.flush();
             dout.close();
+
+            DataInputStream din = new DataInputStream(s.getInputStream());
+            String data;
+            while(true) {
+                data = din.readUTF();
+                System.out.println(data);
+                if (data == "close") {
+                    break;
+                }
+            }
             s.close();
         } catch(Exception e) {
             System.out.println(e);

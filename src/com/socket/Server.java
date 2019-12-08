@@ -30,6 +30,12 @@ public class Server {
             dout.writeUTF("After 5 mins: YOLO BOLO");
             dout.flush();
 
+            TimeUnit.SECONDS.sleep(5);
+
+            dout.writeUTF("close");
+            dout.flush();
+            dout.close();
+
             ss.close();
         } catch(Exception e) {
             System.out.println(e);
