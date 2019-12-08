@@ -13,7 +13,6 @@ public class Client {
             dout.writeUTF("Hello Server");
             dout.flush();
 
-
             DataInputStream din = new DataInputStream(s.getInputStream());
             String data;
             while(true) {
@@ -23,6 +22,7 @@ public class Client {
                     break;
                 }
             }
+
             dout.close();
             din.close();
             s.close();

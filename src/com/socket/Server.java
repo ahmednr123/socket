@@ -25,13 +25,15 @@ public class Server {
             dout.writeUTF("YOLO BOLO");
             dout.flush();
 
-            TimeUnit.MINUTES.sleep(5);
+            TimeUnit.SECONDS.sleep(5);
 
-            dout.writeUTF("After 5 mins: YOLO BOLO");
+            System.out.println("sending data");
+            dout.writeUTF("After 5 secs: YOLO BOLO");
             dout.flush();
 
             TimeUnit.SECONDS.sleep(5);
 
+            System.out.println("sending data");
             dout.writeUTF("close");
             dout.flush();
 
